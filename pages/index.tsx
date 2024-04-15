@@ -2,15 +2,16 @@ import React from 'react';
 import Slider from "@/components/tempelates/Index/Slider";
 import About from "@/components/tempelates/Index/About";
 import Services from "@/components/tempelates/Index/Services";
-import axios from 'axios';
-import {log} from "node:util";
-
+import Offer from "@/components/tempelates/Index/Offer";
+import 'sweetalert2/src/sweetalert2.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 const Index = (props: any) => {
     return (
         <>
             <Slider/>
             <About/>
-            <Services data = {props.data.services} />
+            <Services data={props.data.services}/>
+            <Offer/>
         </>
     );
 };
@@ -24,7 +25,7 @@ export async function getStaticProps() {
                 services
             }
         },
-        revalidate:     60 * 60 * 12,
+        revalidate: 60 * 60 * 12,
     }
 }
 
